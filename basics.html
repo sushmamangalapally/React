@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+       <div id="app"></div>
+       <script src="/usr/local/lib/node_modules/react/dist/react.js"></script>
+       <script src="/usr/local/lib/node_modules/react-dom/dist/react-dom.js"></script>
+       <script>
+       console.log(React);
+       console.log(ReactDOM);
+       const myButton = React.createElement('button', null, 'Click Me!');
+       console.log(JSON.stringify(myButton));
+       ReactDOM.render(myButton, document.getElementById('app'));
+   
+       </script>
+   
+</body>
+</html>
