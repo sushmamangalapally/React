@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="say"></div>
+    <div id="list"></div>
+    <div id="showlist0"></div>
+    <div id="showlist1"></div>
+    <div id="showlist2"></div>
+    
+        <script src="/usr/local/lib/node_modules/react/dist/react.js"></script>
+        <script src="/usr/local/lib/node_modules/react-dom/dist/react-dom.js"></script>
+        
+       <script>
+            console.log(React);
+            console.log(ReactDOM);
+            const head = React.createElement('h1', null, "Hello Dojo!");
+            ReactDOM.render(head, document.getElementById('header')); 
+            const somesay = React.createElement('h3', null, "Things I need to Learn");
+            ReactDOM.render(somesay, document.getElementById('say')); 
+            // const list = React.createElement('ul', null, null);
+            // ReactDOM.render(list, document.getElementById('list')); 
+
+            var somelist = ["Learn React", "Climb Everest", "Run a marathon", "Feed the dogs"]
+            for(var i = 0; i < somelist.length; i++){
+                const list = React.createElement('li', null, somelist[i]);
+                ReactDOM.render(list, document.getElementById('showlist'+i)); 
+            }
+
+        </script>
+
+</body>
+</html>
