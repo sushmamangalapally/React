@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="firstapp"></div>
+        <div id="app"></div>
+        <script src="/usr/local/lib/node_modules/react/dist/react.js"></script>
+        <script src="/usr/local/lib/node_modules/react-dom/dist/react-dom.js"></script>
+        <script>
+        console.log(React);
+        console.log(ReactDOM);
+        const Title = (props) => {
+            return React.createElement('h1', null, 'Hardcoded Title! Boo!');
+            }
+        console.log(Title);
+        const App = (props) => {
+            return React.createElement(Title, null);
+            }
+        // console.log(JSON.stringify(App));
+        ReactDOM.render(App(), document.getElementById('firstapp'));
+        const GetTitle = (props) => {
+            const { text } = props;
+            return React.createElement('h1', null, text);
+        }
+        const GetApp = (props) => {
+            return React.createElement('div', null,
+            React.createElement(GetTitle, { text: 'Title one!' } ),
+            React.createElement(GetTitle, { text: 'Title two!!' } ),
+            React.createElement(GetTitle, { text: 'Title three!!!' } )
+        )
+        }
+
+        ReactDOM.render(GetApp(), document.getElementById('app'));
+        </script>
+ 
+</body>
+</html>

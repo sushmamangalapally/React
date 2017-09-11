@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            height: 300px;
+            width: 200px;
+        }
+        h1{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+        <h1 id="app"></h1>
+        <h1 id="app1"></h1>
+        <h1 id="app2"></h1>
+        <script src="/usr/local/lib/node_modules/react/dist/react.js"></script>
+        <script src="/usr/local/lib/node_modules/react-dom/dist/react-dom.js"></script>
+        <script>
+        console.log(React);
+        console.log(ReactDOM);
+        const whiteblue = ReactDOM.render(
+            React.createElement('div', { style: { backgroundColor: 'blue', color: 'white' } }, 'white on blue'),
+            document.getElementById('app')
+        );
+
+
+        ReactDOM.render(
+            React.createElement('div', { style: { backgroundColor: 'red', color: 'blue' } }, 'blue on red'),
+            document.getElementById('app1')
+        );
+        ReactDOM.render(
+            React.createElement('div', { style: { backgroundColor: 'pink', color: 'green' } }, 'green on pink'),
+            document.getElementById('app2')
+        );
+
+        </script>
+
+</body>
+</html>

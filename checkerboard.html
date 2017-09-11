@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="app"></div>
+        <div id="firstapp"></div>
+        <div id="checkerboard"></div>
+        <script src="/usr/local/lib/node_modules/react/dist/react.js"></script>
+        <script src="/usr/local/lib/node_modules/react-dom/dist/react-dom.js"></script>
+        <script>
+        console.log(React);
+        console.log(ReactDOM);
+        var styles = {
+            row: {height: '20px'},
+            cell: {height: '20px', width: '20px', display:'inline-block'},
+            colorA: {backgroundColor: 'black'},
+            colorB: {backgroundColor: 'red'}
+        }
+
+        const Title = (props) => {
+            return React.createElement('h1', null, 'Hardcoded Title! Boo!');
+            }
+        console.log(Title);
+        const App = (props) => {
+            return React.createElement(Title, null);
+            }
+        // console.log(JSON.stringify(App));
+        ReactDOM.render(App(), document.getElementById('firstapp'));
+        const GetTitle = (props) => {
+            const { text } = props;
+            return React.createElement('h1', null, text);
+        }
+        const GetApp = (props) => {
+            return React.createElement('span', null,
+            React.createElement(GetTitle, { text: 'Title one!' } ),
+            React.createElement(GetTitle, { text: 'Title two!!' } ),
+            React.createElement(GetTitle, { text: 'Title three!!!' } )
+        )
+        }
+
+        ReactDOM.render(GetApp(), document.getElementById('app'));
+
+        const CheckerBoard = (props) => {
+            return React.createElement('div', null,
+            React.createElement(Row, { box: 'd' }),
+            React.createElement(Row, { box: 'e'}),
+            React.createElement(Row, { box: 'f'} )
+            )        }
+        function Row (props) {
+            return React.createElement('div', null,
+            React.createElement(Cell, { box: 'a' }),
+            React.createElement(Cell, { box: 'b'}),
+            React.createElement(Cell, { box: 'c'} )
+            )
+        }
+        
+        function Cell (props) {
+            const { box } = props;
+            return React.createElement('div',null, box);/*Some UI... perhaps a list of rows?*/
+        }
+
+        ReactDOM.render(Cell(12), document.getElementById('checkerboard'));
+        // And feel free to use the following object:
+
+        </script>
+
+</body>
+</html>
