@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"></div>
+    <div id="somecontent"></div>
+    <script src="/usr/local/lib/node_modules/react/dist/react.js"></script>
+        <script src="/usr/local/lib/node_modules/react-dom/dist/react-dom.js"></script>
+        <script type="text/jsx">
+            console.log(React);
+            console.log(ReactDOM);
+            const buttonProps = {
+                const List = (props) => {
+                    const listItems = props.items.map((itemString) => {
+                        return <li key={itemString}>{itemString}</li>
+                    });
+                    return (
+                        <ul>
+                            {listItems}
+                        </ul>
+                    )
+                }
+                ReactDOM.render(
+                    <List items= { ['React', 'Redux', 'Node', 'Express'] }/>,
+                    document.getElementById('somecontent')
+                );
+
+        </script>
+
+</body>
+</html>
